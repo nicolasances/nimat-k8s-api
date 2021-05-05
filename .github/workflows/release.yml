@@ -23,7 +23,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build . -t eu.gcr.io/${{ secrets.DEV_GCP_PID }}/${{env.PACKAGE_NAME}}:${{env.PACKAGE_VERSION}}
+        docker build . -t nicolasances/${{env.PACKAGE_NAME}}:${{env.PACKAGE_VERSION}}
  
     - name: Push Docker image to Dockerhub 
       uses: docker/build-push-action@v1
