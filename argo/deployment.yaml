@@ -17,21 +17,6 @@ spec:
         spec:
             containers:
             - name: nimat-k8s-api
-              image: eu.gcr.io/hackathon-2021-312806/
+              image: nicolasances/nimat-k8s-api:0.1.0
               ports:
               - containerPort: 8080
-              volumeMounts:
-                  - mountPath: /var/secrets/google
-                    name: service-account-key-vol
-              env:
-                  - name: GOOGLE_APPLICATION_CREDENTIALS
-                    value: /var/secrets/google/ms-key.json
-                  - name: TOTO_ENV
-                    valueFrom:
-                        configMapKeyRef:
-                            name: env-map
-                            key: env
-            volumes:
-                - name: service-account-key-vol
-                  secret:
-                      secretName: ms-service-account-key
