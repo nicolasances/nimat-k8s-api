@@ -1,0 +1,16 @@
+{
+  "name": "nimat-k8s-api",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment-timezone": "^0.5.23",
+    "request": "^2.88.2",
+    "toto-api-controller": "^7.1.0"
+  }
+}
