@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: nimat-k8s-api
+    labels:
+        microserice: nimat-k8s-api
+spec:
+    replicas: 2
+    revisionHistoryLimit: 0
+    selector:
+        matchLabels:
+            microservice: nimat-k8s-api
+    template:
+        metadata:
+            labels:
+                microservice: nimat-k8s-api
+        spec:
+            containers:
+            - name: nimat-k8s-api
+              image: eu.gcr.io/hackathon-2021-312806/
+              ports:
+              - containerPort: 8080
+              volumeMounts:
+                  - mountPath: /var/secrets/google
+                    name: service-account-key-vol
+              env:
+                  - name: GOOGLE_APPLICATION_CREDENTIALS
+                    value: /var/secrets/google/ms-key.json
+                  - name: TOTO_ENV
+                    valueFrom:
+                        configMapKeyRef:
+                            name: env-map
+                            key: env
+            volumes:
+                - name: service-account-key-vol
+                  secret:
+                      secretName: ms-service-account-key
