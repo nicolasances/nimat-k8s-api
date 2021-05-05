@@ -1,7 +1,7 @@
 
 exports.do = (req) => {
 
-    return Promise((success, failure) => {
+    return new Promise((success, failure) => {
 
         let name = req.params.name;
 
