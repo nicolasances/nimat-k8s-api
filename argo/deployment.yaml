@@ -17,6 +17,6 @@ spec:
         spec:
             containers:
             - name: nimat-k8s-api
-              image: nicolasances/nimat-k8s-api:0.2.1
+              image: nicolasances/nimat-k8s-api:0.3.0
               ports:
               - containerPort: 8080
