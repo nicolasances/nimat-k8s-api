@@ -5,6 +5,6 @@ exports.do = (req) => {
 
         let name = req.params.name;
 
-        success({message: "Hello! This is " + name + " speaking! Welcome!" });
+        success({message: "Hello! This is " + name + " speaking! Welcome to the ATC Hackathon 2021!" });
     })
 }
